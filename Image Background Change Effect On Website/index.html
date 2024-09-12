@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Background Change Effect On Website</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      .main {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .img-box {
+        width: 50%;
+        height: 57%;
+        border-radius: 10px;
+        position: relative;
+        background-image: url(https://img.freepik.com/free-photo/white-blank-background-texture-design-element_53876-121611.jpg?w=1800&t=st=1725572139~exp=1725572739~hmac=a9329de122f842aa802d3ac31e5d6e0a8c71254a11389fc69c536f65fc72bc4d);
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+      }
+      .img-wrap {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px;
+        height: 100%;
+      }
+      .img-wrap img,
+      .img-box > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      span{
+        height: 40px;
+        width: 40px;
+         position: absolute;
+        cursor: ew-resize;
+        left: 20px;
+        top: 50%;
+      }
+      span img{
+        width: 40px;
+        /* top: 50%; */
+        position: absolute;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="img-box">
+        <img src="supercar-7774683_640-removebg-preview.png" alt="" />
+
+        <div class="img-wrap">
+          <img
+            src="https://cdn.pixabay.com/photo/2023/02/07/17/49/supercar-7774683_640.jpg"
+            alt=""
+          />
+        </div>
+        <!-- <span id="line"><img src="https://cdn-icons-png.flaticon.com/512/50/50849.png" alt="" ></span> -->
+      </div>
+    </div>
+    <script>
+                  let imgBox = document.querySelector(".img-box")
+                  let imgWrap = document.querySelector(".img-wrap")
+                  let line = document.getElementById("line")
+
+                  let leftSpace = imgBox.offsetLeft;
+            imgBox.onmousemove = function(e){
+      var boxWidth = (e.pageX - leftSpace) + "px"
+      imgWrap.style.width = boxWidth;
+      // line.style.width = boxWidth;
+            }
+    </script>
+  </body>
+</html>

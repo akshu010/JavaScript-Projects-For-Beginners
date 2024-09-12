@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      .main {
+        width: 100%;
+        height: 100vh;
+        background: #e3f9ff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+      }
+      .calculator {
+        background: #3a4452;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .calculator form input {
+        height: 60px;
+        width: 60px;
+        border-radius: 10px;
+        border: 0;
+        outline: 0;
+        box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1),
+          5px 5px 15px rgba(0, 0, 0, 0.2);
+        background: transparent;
+        font-size: 20px;
+        cursor: pointer;
+        margin: 5px;
+        color: #fff;
+      }
+      #display {
+        display: flex;
+        justify-content: flex-end;
+        margin: 20px 0px;
+      }
+      #display input {
+        text-align: right;
+        flex: 1;
+        font-size: 45px;
+        box-shadow: none;
+        background-color: rgba(255, 255, 255, 0.575);
+        color: black;
+      }
+      #equal2 {
+        width: 135px;
+        color: #33ffd8;
+      }
+      #equal {
+        color: #33ffd8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="calculator">
+        <form>
+          <div id="display"><input type="text" name="Display" / id="main"></div>
+          <div>
+            <input type="button" value="AC" /onclick="Display.value =''"
+            id="equal"> <input type="button" value="DE" /onclick="Display.value
+            = Display.value.toString().slice(0,-1)" id="equal"> <input
+            type="button" value="." /onclick="Display.value +='.'" id="equal">
+            <input type="button" value="/" /onclick="Display.value +='/'"
+            id="equal">
+          </div>
+          <div>
+            <input type="button" value="7" /onclick="Display.value +='7'">
+            <input type="button" value="8" /onclick="Display.value +='8'">
+            <input type="button" value="9" /onclick="Display.value +='9'">
+            <input type="button" value="*" /onclick="Display.value +='*'"
+            id="equal">
+          </div>
+          <div>
+            <input type="button" value="4" /onclick="Display.value +='4'">
+            <input type="button" value="5" /onclick="Display.value +='5'">
+            <input type="button" value="6" /onclick="Display.value +='6'">
+            <input type="button" value="-" /onclick="Display.value +='-'"
+            id="equal">
+          </div>
+          <div>
+            <input type="button" value="1" /onclick="Display.value +='1'">
+            <input type="button" value="2" /onclick="Display.value +='2'">
+            <input type="button" value="3" /onclick="Display.value +='3'">
+            <input type="button" value="+" /onclick="Display.value +='+'"
+            id="equal">
+          </div>
+          <div>
+            <input type="button" value="00" /onclick="Display.value +='00'">
+            <input type="button" value="0" /onclick="Display.value +='0'">
+            <input id="equal2" type="button" value="=" / onclick="Display.value
+            = eval(Display.value)" >
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      let equal = document.getElementById("equal2");
+      let main = document.getElementById("main");
+
+      equal.addEventListener("click", function () {
+        if (main.value === "") {
+          main.value = "";
+        } else {
+          main.value = eval(main.value);
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+*{
+   
+    margin: 0;
+    padding: 0;
+
+}
+html,body{
+
+    height: 100%;
+    width: 100%;
+    font-family: "Poppins", system-ui;
+}
+.main{
+    height: 100%;
+    width: 100%;
+   background-color:  rgb(21, 216, 151);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.panel{
+    height: 80%;
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+  #ptop{
+    height: 100px;  
+    width: 100%;    
+    background-color: rgb(108, 236, 108);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+
+  /* padding: 0px auto; */
+    
+    
+   
+} 
+.elem{
+ 
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   color: white
+  
+
+} 
+.box{
+    height: 30px;
+    width: 40px;
+    font-weight: 700;
+    border: 2px solid rgb(0, 0, 0);
+ color: rgb(1, 51, 4);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+#pbtm{
+    width: 100%;
+    height:  calc(100% - 100px);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    cursor: pointer;
+}
+.bubble{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    background-color: rgb(11, 87, 50);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   font-weight: 500;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StopWatch</title>
+    <script
+      src="https://kit.fontawesome.com/094a77e6d2.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body,
+      html {
+        height: 100%;
+        width: 100%;
+      }
+      body {
+        background-color: skyblue;
+      }
+      #stopwatch {
+        background-image: url(NewBackgroundVS.jpg);
+        height: 30vh;
+        width: 30%;
+        opacity: 0.8;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      #stopwatch i {
+        font-size: 30px;
+        height: 40px;
+        width: 40px;
+        margin: 20px;
+        color: rgb(202, 62, 62);
+        text-align: center;
+        padding-top: 35px;
+        cursor: pointer;
+        /* margin-top: 100px; */
+      }
+      #stopwatch h1 {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        margin-top: 50px;
+        font-size: 40px;
+      }
+      #buttons :nth-child(2) {
+        font-size: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="stopwatch">
+      <h1 id="displayTime">00:00:00</h1>
+      <div id="buttons">
+        <i onclick="watchStop()" class="fa-solid fa-pause"></i>
+        <i onclick="watchStart()" class="fa-solid fa-play"></i>
+        <i onclick="watchReset()" class="fa-solid fa-arrow-rotate-left"></i>
+      </div>
+    </div>
+    <script>
+      let [seconds, minutes, hours] = [0, 0, 0];
+      let displayTime = document.querySelector("#displayTime");
+      let timer = null;
+
+      function stopwatch() {
+        seconds++;
+        if (seconds == 60) {
+          seconds = 0;
+          minutes++;
+          if (minutes == 60) {
+            minutes = 0;
+            hours++;
+          }
+        }
+        let h = hours < 10 ? "0" + hours : hours;
+        let m = minutes < 10 ? "0" + minutes : minutes;
+        let s = seconds < 10 ? "0" + seconds : seconds;
+        displayTime.innerHTML = h + ":" + m + ":" + s;
+      }
+      function watchStart() {
+        if (timer != null) {
+          clearInterval(timer);
+        }
+
+        timer = setInterval(stopwatch, 1000);
+      }
+      function watchStop(){
+        clearInterval(timer);
+      }
+      function watchReset(){
+        clearInterval(timer);
+        let [seconds, minutes, hours] = [0, 0, 0];
+        displayTime.innerHTML = "00:00:00"
+
+      }
+    </script>
+  </body>
+</html>

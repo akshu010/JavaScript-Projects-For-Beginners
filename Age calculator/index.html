@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR code generator</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* font-family: "poppins"; */
+      }
+
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+
+      body {
+        font-family: "SUSE", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        background: rgb(2, 0, 36);
+        background: linear-gradient(
+          90deg,
+          rgb(108, 104, 201) 0%,
+          rgba(81, 147, 214, 0.776) 35%,
+          rgb(71, 103, 109) 100%
+        );
+      }
+
+      #main {
+        padding: 100px 200px;
+      }
+
+      #main .text1 {
+        font-size: 50px;
+        font-weight: 800;
+      }
+
+      #main .text2 {
+        font-size: 50px;
+        font-weight: 800;
+        color: yellow;
+      }
+
+      #container {
+        height: 100px;
+        width: 400px;
+        border: 2px solid white;
+        background-color: rgba(255, 255, 255, 0.274);
+        border-radius: 10px;
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      #container input {
+        height: 40px;
+        width: 60%;
+        border-radius: 5px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: 15px;
+        padding-left: 20px;
+        cursor: pointer;
+        position: relative;
+      }
+      /* input::-webkit-calender-picker-indicator{
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: auto;
+            width: auto;
+            position: absolute;
+            background-position: calc(100%-10px);
+            background-size: 30px;
+            cursor: pointer;
+        } */
+      #container button {
+        height: 40px;
+        cursor: pointer;
+        width: 100px;
+        margin-left: 20px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 0, 0.904);
+      }
+      #result {
+        margin-top: 50px;
+        color: rgb(239, 239, 13);
+        font-size: 25px;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="main">
+      <h1 class="text1">JavaScript</h1>
+      <h1 class="text2">Age Calculator</h1>
+      <div id="container">
+        <input type="date" id="date" />
+        <button onclick="calculateAge()">Calculate</button>
+      </div>
+      <p id="result"></p>
+    </div>
+    <script>
+      let userinput = document.getElementById("date");
+      let result = document.getElementById("result");
+      userinput.max = new Date().toISOString().split("T")[0];
+      function calculateAge() {
+        let birthDate = new Date(userinput.value);
+
+        let d1 = birthDate.getDate();
+        let m1 = birthDate.getMonth() + 1;
+        let y1 = birthDate.getFullYear();
+
+        let today = new Date();
+        let d2 = today.getDate();
+        let m2 = today.getMonth() + 1;
+        let y2 = today.getFullYear();
+
+        let d3, m3, y3;
+        y3 = y2 - y1;
+        if (m2 >= m1) {
+          m3 = m2 - m1;
+        } else {
+          y3--;
+          m3 = 12 + m2 - m1;
+        }
+
+        if (d2 >= d1) {
+          d3 = d2 - d1;
+        } else {
+          m3--;
+          d3 = getDaysInMonth(y1, m1) + d2 - d1;
+        }
+        if (m3 < 0) {
+          m3 = 11;
+          y3--;
+        }
+        result.innerHTML = `You are ${y3} years, ${m3} months, ${d3} days old`;
+
+        function getDaysInMonth(year, month) {
+          return new Date(year, month, 0).getDate();
+        }
+
+        if (userinput.value == "") {
+          alert("Please enter a valid date of birth  ");
+          result.innerHTML = "";
+        }
+      }
+      document;
+    </script>
+  </body>
+</html>

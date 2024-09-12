@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text To Voice Converter Using JavaScript</title>
+    <script
+      src="https://kit.fontawesome.com/094a77e6d2.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      body {
+        background-color: rgb(118, 23, 235);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      main {
+        height: auto;
+        width: 30vw;
+      }
+      .main h1 {
+        color: white;
+      }
+      .main span {
+        color: red;
+        border-bottom: 2px solid white;
+      }
+      textarea {
+        margin-top: 30px;
+        width: 600px;
+        height: 250px;
+        background: #403d84;
+        color: #fff;
+        font-size: 15px;
+        border: 0;
+        outline: 0;
+        padding: 20px;
+        border-radius: 10px;
+        resize: none;
+        margin-bottom: 30px;
+      }
+      select {
+        height: 40px;
+        width: 80%;
+        border-radius: 10px;
+        background: #403d84;
+        cursor: pointer;
+        color: white;
+      }
+      button {
+        height: 40px;
+        width: 100px;
+        border-radius: 10px;
+        color: white;
+        background-color: red;
+        border: none;
+        outline: none;
+        margin-left: 10px;
+        cursor: pointer;
+        position: relative;
+      }
+      i {
+        position: absolute;
+        left: 65%;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Text To Speech <span>Convertor</span></h1>
+      <textarea placeholder="Write anything here" id="text-area"></textarea>
+      <div class="row">
+        <select></select>
+        <button>Listen</button>
+      </div>
+    </div>
+    <script>
+      let speech = new SpeechSynthesisUtterance();
+      let voices = [];
+      let voiceSelect = document.querySelector("select");
+      window.speechSynthesis.onvoiceschanged = () => {
+        voices = window.speechSynthesis.getVoices();
+        speech.voice = voices[0];
+        voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name,i)));
+      }
+voiceSelect.addEventListener("change",()=>{
+    speech.voice = voices[voiceSelect.value]
+})
+      document.querySelector("button").addEventListener("click", function () {
+        speech.text = document.querySelector("textarea").value;
+        window.speechSynthesis.speak(speech);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pop up form</title>
+    <script
+      src="https://kit.fontawesome.com/094a77e6d2.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      .main {
+        height: 100%;
+        width: 100%;
+        background-color: aquamarine;
+        position: relative;
+      }
+      #btn {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        height: 40px;
+        width: 100px;
+        border-radius: 10px;
+        background-color: bisque;
+        font-size: 20px;
+        color: black;
+        cursor: pointer;
+      }
+      .popup {
+        height: 30vh;
+        width: 20vw;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        border-radius: 10px;
+        animation: slideDown 0.5s forwards;
+        opacity: 0;
+      }
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100vh) translateX(-45%) scale(0.5);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(-15vh) translateX(-45%) scale(1); 
+          opacity: 1;
+        }
+      }
+
+      .popup img {
+        position: absolute;
+        height: 60px;
+        width: 60px;
+        top: -35px;
+        border: 1px solid white;
+        border-radius: 50%;
+        background-color: rgb(72, 213, 72);
+        border: none;
+      }
+
+      .popup h1 {
+        font-size: 30px;
+        font-weight: 550;
+      }
+      .popup p {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 15px;
+      }
+      .popup button {
+        width: 90%;
+        height: 35px;
+        margin-top: 40px;
+        cursor: pointer;
+        background-color: rgb(72, 213, 72);
+        color: white;
+        border: none;
+        font-size: 20px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <button onclick="display()" id="btn">Submit</button>
+    </div>
+    <script>
+      let main = document.querySelector(".main");
+      let button = document.querySelector(".btn2");
+      let div;
+      function display() {
+        div = document.createElement("div");
+        div.classList.add("popup");
+        main.appendChild(div);
+
+        let img = document.createElement("img");
+        img.src =
+          "https://cdn2.iconfinder.com/data/icons/greenline/512/check-512.png";
+        div.appendChild(img);
+        let heading = document.createElement("h1");
+        heading.innerHTML = "Thank You!";
+        div.appendChild(heading);
+        let pera = document.createElement("p");
+        pera.innerHTML =
+          "Your details has been successfully submitted. Thanks!";
+        div.appendChild(pera);
+        let btn = document.createElement("button");
+        btn.innerHTML = "OK";
+
+        div.appendChild(btn);
+
+        btn.addEventListener("click", function () {
+          if (main.contains(div)) {
+            main.removeChild(div);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

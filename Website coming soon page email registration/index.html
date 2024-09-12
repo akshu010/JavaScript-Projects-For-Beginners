@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website coming soon page</title>
+    <script
+      src="https://kit.fontawesome.com/094a77e6d2.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      body {
+        background-image: url(https://wallpapers.com/images/featured/dark-nature-background-sf5wu61v1au0kwfk.jpg);
+        background-repeat: no-repeat;
+        padding: 200px 150px;
+        color: white;
+      }
+      p {
+        font-size: 25px;
+        margin-bottom: 30px;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: 800;
+      }
+      #sec {
+        font-size: 15px;
+        margin-top: 10px;
+      }
+      form {
+        position: relative;
+      }
+      input {
+        height: 40px;
+        width: 350px;
+        padding: 20px;
+        outline: none;
+      }
+      img {
+        position: absolute;
+        left: 308px;
+        top: 2px;
+        height: 40px;
+        cursor: pointer;
+      }
+      .third {
+        font-size: 13px;
+        margin-top: 10px;
+        color: rgb(10, 255, 10);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <p>Coming soon!</p>
+      <h1>Our Brand New</h1>
+      <h1>Website Is On It's Way</h1>
+      <p id="sec">Subscribe for more details.</p>
+      <form name="submit-to-google-sheet">
+        <input type="email" name="Email" placeholder="Your email id" required />
+        <button id="btn" type="submit">
+          <img
+            src="https://static-00.iconduck.com/assets.00/telegram-icon-512x512-1s8w0tx0.png"
+            alt=""
+           id="imgg"/>
+        </button>
+      </form>
+      <!-- <p class="third" >Thank you for subscribing!</p> -->
+    </div>
+    <script>
+    const scriptURL =
+  "https://script.google.com/macros/s/AKfycbzz_NyzEo65gO8ZyZjrM2WxGuKObWwc6gAcqiohrfTqS02JrxDGjFjxo4M8dPWU6gjeNw/exec";
+const form = document.forms["submit-to-google-sheet"];
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  
+  fetch(scriptURL, { method: "POST", body: new FormData(form) })
+    .then((response) => {
+      console.log("Success!", response);
+      showThankYouMessage();
+    })
+    .catch((error) => console.error("Error!", error.message));
+});
+let img = document.getElementById("imgg")
+let main = document.querySelector(".main");
+img.addEventListener("click",function(){
+    let pera = document.createElement("p")
+    pera.classList.add('third')
+    pera.textContent = "Thank you for subscribing!";
+    main.appendChild(pera)
+})
+    
+  
+
+ 
+
+
+    </script>
+  </body>
+</html>

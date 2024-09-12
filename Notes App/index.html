@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* font-family: "poppins"; */
+      }
+
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+
+      body {
+        font-family: "SUSE", sans-serif;
+
+        font-weight: 500;
+        font-style: normal;
+        background: rgb(2, 0, 36);
+
+        background: linear-gradient(
+          90deg,
+          rgb(94, 87, 230) 0%,
+          rgba(81, 147, 214, 0.776) 35%,
+          rgb(76, 202, 227) 100%
+        );
+      }
+
+      #main {
+        padding: 100px 200px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+      }
+
+      #main #image1 {
+        height: 50px;
+      }
+
+      #main .container {
+        display: flex;
+      }
+
+      #main .container p {
+        position: absolute;
+        top: 110px;
+        left: 255px;
+        font-size: 30px;
+        font-weight: 700;
+        color: white;
+      }
+
+      #btn {
+        height: 40px;
+        margin-top: 40px;
+        background: rgb(60, 5, 94);
+        background: linear-gradient(
+          90deg,
+          rgba(60, 5, 94, 1) 0%,
+          rgba(135, 81, 142, 0.7763699229691876) 35%,
+          rgba(174, 135, 181, 1) 100%
+        );
+        border-radius: 50px;
+        width: 150px;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .adding {
+        height: 100px;
+        width: 20vw;
+        margin-top: 50px;
+        background-color: white;
+        font-size: 20px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+
+      .image2 {
+        height: 25px;
+        width: 25px;
+        position: absolute;
+        left: 255px;
+        top: 70px;
+        cursor: pointer;
+        border-radius: 20px;
+        /* background-color: red; */
+      }
+      .image2:hover {
+        background-color: rgb(146, 94, 188);
+      }
+
+      .inputbox {
+        height: 100px;
+        width: 20vw;
+        margin-top: 50px;
+        background-color: white;
+        font-size: 20px;
+        position: relative;
+      }
+      .task-container p{
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="main">
+      <div class="container">
+        <img
+          src="https://i.pinimg.com/originals/e9/95/0d/e9950d4cb877dd241377559130d90758.png"
+          alt=""
+          id="image1"
+        />
+        <p>Notes</p>
+      </div>
+      <button onclick="addTask()" id="btn">Create Notes</button>
+      <div class="task-container">
+        <!-- <p contenteditable="true" class="adding"></p>
+            <img src="icons8-delete-button-30.png" alt="" class="image2"> -->
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

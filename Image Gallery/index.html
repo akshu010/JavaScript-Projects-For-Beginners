@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <style>
+      body {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .container {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #images img {
+        height: 98px;
+        width: 100px;
+        display: block;
+        margin-bottom: 10px;
+        opacity: 0.6;
+        cursor: pointer;
+      }
+      #images img:hover {
+        opacity: 1;
+      }
+      #largeimage img {
+        height: 490px;
+        width: 500px;
+        margin-left: 20px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="images">
+        <img
+          src="https://rukminim2.flixcart.com/image/832/832/kw9krrk0/mouse/v/p/h/toad-13-portronics-original-imag8zbqqkgmb9d6.jpeg?q=70&crop=false"
+          alt=""
+          onclick="myfunction(this)"
+        />
+        <img
+          src="https://rukminim2.flixcart.com/image/832/832/kw9krrk0/mouse/m/v/n/toad-13-portronics-original-imag8zbqzgzqm6fy.jpeg?q=70&crop=false"
+          alt=""
+          onclick="myfunction(this)"
+        />
+        <img
+          src="https://rukminim2.flixcart.com/image/832/832/kw9krrk0/mouse/y/9/v/toad-13-portronics-original-imag8zbqczkz9kmc.jpeg?q=70&crop=false"
+          alt=""
+          onclick="myfunction(this)"
+        />
+        <img
+          src="https://rukminim2.flixcart.com/image/832/832/xif0q/mouse/d/o/n/-original-imagwde4rf4tffuz.jpeg?q=70&crop=false"
+          alt=""
+          onclick="myfunction(this)"
+        />
+        <img
+          src="https://rukminim2.flixcart.com/image/832/832/kw9krrk0/mouse/s/u/f/toad-13-portronics-original-imag8zbqqak7ynvy.jpeg?q=70&crop=false"
+          alt=""
+          onclick="myfunction(this)"
+        />
+      </div>
+      <div id="largeimage">
+        <img
+          src="https://rukminim2.flixcart.com/image/832/832/kw9krrk0/mouse/v/p/h/toad-13-portronics-original-imag8zbqqkgmb9d6.jpeg?q=70&crop=false"
+          alt=""
+          id="imagebox"
+        />
+      </div>
+    </div>
+    <script>
+      function myfunction(smallImg) {
+        let fullimg = document.querySelector("#imagebox");
+        fullimg.src = smallImg.src;
+      }
+    </script>
+  </body>
+</html>

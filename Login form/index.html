@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Auth Page</title>
+    <style>
+      body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.auth-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auth-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.auth-tab {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #ff7f6d, #ffc771);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.auth-tab.active-tab {
+    background: #ff7f6d;
+}
+
+.auth-container, .auth-register {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 320px;
+    display: none; /* Initially hide both forms */
+}
+
+.auth-container {
+    display: block; /* Show login form by default */
+}
+
+.auth-register {
+    position: absolute;
+    left: -420px; /* Position the register form 100px left from the container + width of the container (320px) */
+    top: 0;
+}
+
+.social-auth {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.social-btn {
+    width: 30%;
+    padding: 12px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff7f6d, #ffc771);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.terms-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.terms-wrapper input {
+    margin-right: 8px;
+}
+
+.submit-btn {
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #ff7f6d, #ffc771);
+    color: white;
+    cursor: pointer;
+}
+
+
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Combined Auth Page</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="auth-wrapper">
+            <div class="auth-buttons">
+                <button class="auth-tab active-tab" id="login-tab">Log In</button>
+                <button class="auth-tab" id="register-tab">Register</button>
+            </div>
+            <div class="auth-container">
+               
+                <form class="auth-form" id="login-form">
+                    <input type="text" placeholder="Username" class="form-input">
+                    <input type="password" placeholder="Password" class="form-input">
+                    <div class="terms-wrapper">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Remember Password</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Log in</button>
+                </form>
+            </div>
+            
+            <div class="auth-register" id="register-form">
+              
+                <form class="auth-form">
+                    <input type="text" placeholder="User Name" class="form-input">
+                    <input type="email" placeholder="Email ID" class="form-input">
+                    <input type="password" placeholder="Enter Password" class="form-input">
+                    <div class="terms-wrapper">
+                        <input type="checkbox" id="agree-terms">
+                        <label for="agree-terms">I agree to the Terms & Conditions</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Register</button>
+                </form>
+            </div>
+        </div>
+    </body>
+    </html>
+    
+</body>
+</html>

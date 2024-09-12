@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show Password Strength</title>
+    <script
+      src="https://kit.fontawesome.com/094a77e6d2.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      body {
+        background-color: rgba(0, 0, 0, 0.777);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      input {
+        height: 45px;
+        width: 300px;
+        background-color: rgba(0, 0, 0, 0.777);
+        position: relative;
+        border: 1px solid white;
+        padding: 20px;
+        font-size: 15px;
+        color: white;
+       
+      }
+      i {
+        font-size: 30px;
+        color: wheat;
+        left: 835px;
+        top: 345px;
+        position: absolute;
+      }
+      p {
+        margin-right: 12%;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="pass" type="password" placeholder="password" />
+    <i id="submit" class="fa-solid fa-arrow-right"></i>
+    <p id="pera">
+      
+     
+    </p>
+    <script>
+      let password = document.getElementById("pass");
+      let pera = document.getElementById("pera");
+
+
+      password.addEventListener("input", () => {
+       
+        if (password.value.length < 4) {
+          pera.innerHTML = "password is weak";
+          pera.style.color = "red";
+        } else if (password.value.length > 4 && password.value.length <= 6) {
+          pera.innerHTML = "password is medium";
+          pera.style.color = "orange";
+        } else if (password.value.length > 6 && password.value.length <= 8) {
+          pera.innerHTML = "password is strong";
+          pera.style.color = "green";
+        }
+      });
+    </script>
+  </body>
+</html>

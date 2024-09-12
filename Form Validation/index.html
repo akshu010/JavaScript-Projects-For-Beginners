@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <script
+      src="https://kit.fontawesome.com/094a77e6d2.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      body {
+        background-color: navy;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      #container {
+        height: auto;
+        width: 400px;
+        background-color: white;
+        position: relative;
+        border-radius: 10px;
+        padding: 20px;
+      }
+      #container img {
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        left: 45%;
+        top: -25px;
+        color: white;
+      }
+      .input-group {
+        margin-top: 40px;
+        position: relative;
+      }
+      .input-group input {
+        border: none;
+        margin-left: 10px;
+        border-bottom: 1px solid rgb(0, 0, 0);
+        padding-bottom: 5px;
+        outline: none;
+        font-size: 14px;
+        width: calc(100% - 30px);
+      }
+      #btn {
+        height: 40px;
+        width: 100px;
+        font-size: 20px;
+        background-color: navy;
+        color: white;
+        border-radius: 10px;
+        text-align: center;
+        margin-top: 30px;
+        cursor: pointer;
+        border: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .input-group label {
+        font-size: 18px;
+        margin-left: 10px;
+      }
+      form {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+      .input-group span {
+        position: absolute;
+        right: 0;
+        bottom: 15px;
+        font-size: 12px;
+        color: red;
+        font-weight: bold;
+      }
+      #submit-error {
+        font-size: 14px;
+        color: red;
+        text-align: center;
+        margin-top: 10px;
+        display: block;
+      }
+      .input-group span i {
+        color: green;
+        font-size: 15px;
+      }
+      .submitted {
+        background-color: rgb(255, 255, 255);
+        height: auto;
+        width: auto;
+        position: absolute;
+        border: 1px solid black;
+        border-radius: 10px;
+        font-size: 15px;
+        padding: 20px;
+        color: rgb(24, 164, 199);
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5K6iHlN79UOl9U5uImTPZr-0KQiqNWq5_Zw&s"
+        alt="" id="imagee"
+      />
+      <form id="main">
+        <div class="input-group">
+          <label> Full Name </label>
+          <input
+            type="text"
+            placeholder="Enter your name"
+            id="contact-name"
+            onkeyup="validateName()"
+          />
+          <span id="name-error"></span>
+        </div>
+        <div class="input-group">
+          <label> Phone No. </label>
+          <input
+            type="text"
+            placeholder="123 456 7890"
+            id="contact-phone"
+            onkeyup="validatePhone()"
+          />
+          <span id="phone-error"></span>
+        </div>
+        <div class="input-group">
+          <label> Email Id </label>
+          <input
+            type="text"
+            placeholder="Enter Email"
+            id="contact-email"
+            onkeyup="validateEmail()"
+          />
+
+          <span id="email-error"></span>
+        </div>
+        <div class="input-group">
+          <label> Your Message </label>
+          <input
+            type="text"
+            placeholder="Enter your message"
+            id="contact-message"
+            onkeyup="validateMessage()"
+          />
+          <span id="message-error"></span>
+        </div>
+        <button onclick=" return validateForm()" id="btn">Submit</button>
+        <span id="submit-error"></span>
+      </form>
+      
+    </div>
+    
+    <script src="script.js"></script>
+  </body>
+</html>

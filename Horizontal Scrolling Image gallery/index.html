@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horizontal scrolling inage gallery</title>
+    <script src="https://kit.fontawesome.com/094a77e6d2.js" crossorigin="anonymous"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      body {
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .container {
+        height: 45vh;
+        width: 815px;
+        display: flex;
+       overflow: scroll;
+        
+      }
+      .container::-webkit-scrollbar{
+        display: none;
+      }
+      .container img{
+        height: 250px;
+        width: 200px;
+        margin: 15px;
+        cursor: pointer;
+       filter: grayscale(100%);
+       border-radius: 10px;
+       transition: transform 0.5s;
+      
+      }
+      .container img:hover{
+        transform: scale(1.1);
+        filter: grayscale(0);
+      }
+
+       i{
+        font-size: 50px;
+        color: orangered;
+        cursor: pointer;
+        margin: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <i id="left" class="fa-solid fa-circle-arrow-left"></i>
+    <div class="container">
+       
+      <img
+        src="https://plus.unsplash.com/premium_photo-1673757121102-0ca51260861f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW9kZWx8ZW58MHx8MHx8fDA%3D"
+        alt=""
+      />
+      <img
+        src="
+        https://plus.unsplash.com/premium_photo-1673758905770-a62f4309c43c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bW9kZWx8ZW58MHx8MHx8fDA%3D"
+        alt=""
+      />
+      <img
+        src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2124&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt=""
+      />
+      <img
+        src="https://images.unsplash.com/photo-1467632499275-7a693a761056?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt=""
+      />
+      <img
+        src="https://plus.unsplash.com/premium_photo-1669704098750-7cd22c35422b?q=80&w=2788&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt=""
+      />
+      <img
+        src="https://images.unsplash.com/photo-1516726817505-f5ed825624d8?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt=""
+      />
+      <img
+        src="https://images.unsplash.com/photo-1512310604669-443f26c35f52?q=80&w=2834&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt=""
+      />
+      <img
+        src="https://images.unsplash.com/photo-1469460340997-2f854421e72f?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt=""
+      />
+      
+   
+      
+    </div>
+    <i id="right" class="fa-solid fa-circle-arrow-right"></i>
+    <script>
+        let imgGallery = document.querySelector(".container")
+let left = document.getElementById("left")
+let right = document.getElementById("right")
+right.addEventListener("click",function(){
+    imgGallery.style.scrollBehavior = "smooth"
+imgGallery.scrollLeft += 800;
+
+})
+left.addEventListener("click",function(){
+    imgGallery.style.scrollBehavior = "smooth"
+imgGallery.scrollLeft -= 800;
+})
+    </script>
+  </body>
+</html>

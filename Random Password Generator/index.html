@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+    <style>
+        body {
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(58, 41, 99, 1) 35%, rgba(0, 212, 255, 1) 100%);
+             font-family: "Poppins", system-ui;
+        }
+
+        .main {
+          margin-left: 200px;
+          margin-top: 150px;
+        }
+
+        #first {
+            color: white;
+            font-size: 40px;
+            font-weight: 500;
+        }
+        #second {
+       color: rgba(92, 246, 138, 0.942);
+            text-decoration: underline;
+            font-size: 40px;
+            font-weight: 500;
+            margin-top: -25px;
+        }
+        #pass{
+            height: 40px;
+            width: 400px;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+        input{
+            height: 40px;
+            position: relative;
+            /* width: 400px; */
+        }
+        img{
+            /* background-color: red; */
+            position: absolute;
+            left:590px;
+            top: 45%;
+            cursor: pointer;
+            color:  rgba(92, 246, 138, 0.942); ;
+            
+        }
+        .btn button {
+            height: 40px;
+            width: 200px;
+            margin-top: 20px;
+            background-color: rgba(92, 246, 138, 0.942);
+            font-size: 15px;
+            color: rgb(20, 9, 9);
+            cursor: pointer;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <p id="first">Generate a</p>
+        <p id="second"> Random Password</p>
+        <input id="pass" type="text"placeholder="Password">  
+        <img src="images/copy icon.png" alt="" id="photo"/ onclick="copypassword()">
+       
+        <div class="btn"> <button onclick="getPassword()" >Generate Password</button></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: Arial, Helvetica, sans-serif;
+            background: rgb(2, 0, 36);
+            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(58, 41, 99, 1) 35%, rgba(0, 212, 255, 1) 100%);
+        }
+
+        .main {
+            height: auto;
+            width: 30vw;
+            background-color: white;
+            border-radius: 10px;
+            /* display: flex;
+            align-items: center;
+            justify-content: center; */
+        }
+
+        .main h3 {
+            font-size: 25px;
+        }
+
+        .main .row {
+            width: 95%;
+
+            height: 50px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            border: 2px solid white;
+            border-radius: 50px;
+
+
+        }
+
+        .main img {
+            position: relative;
+            top: 6px;
+        }
+
+        .main h3 {
+            margin-left: 25px;
+        }
+
+        #tasks {
+
+            height: 40px;
+            width: 75%;
+            border-radius: 50px;
+            color: rgb(7, 5, 5);
+            text-align: justify;
+            font-size: 18px;
+        }
+
+        button {
+
+            height: 40px;
+            border-radius: 25px;
+            width: 60px;
+            background-color: rgb(255, 98, 0);
+            font-size: 15px;
+            color: white;
+            cursor: pointer;
+
+        }
+
+        ul li {
+            margin: 20px;
+            list-style: none;
+            user-select: none;
+            cursor: pointer;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '';
+            background-image: url(images/unchecked.png);
+            height: 28px;
+            width: 28px;
+            position: absolute;
+            border-radius: 50px;
+            top: -1px;
+            left: -35px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .checked {
+            color: orangered;
+            text-decoration: line-through;
+        }
+
+        .checked::before {
+            background-image: url(images/check\ icon.png);
+
+        }
+      
+
+        ul li span {
+            position: absolute;
+            right: 0px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            /* font-size: 22px; */
+            background-color: white;
+            text-align: center;
+            border-radius: 10px;
+            line-height: 18px;
+            color: orangered;
+        }
+        ul li span:hover{
+            background-color: gray;
+        }
+    
+    
+    </style>
+
+</head>
+
+<body>
+    <div class="main">
+        <h3>
+            To-Do List
+            <span><img src="icons8-tasklist-30.png" alt=""></span>
+        </h3>
+        <div class="row">
+            <input id="tasks" type="text" placeholder="Enter Your Task">
+            <button onclick=" addTask() "> Add </button>
+             
+        </div>
+
+        <ul id="listcontainer">
+            
+        </ul> 
+      
+
+    </div>
+    <div id="tostButtons"></div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

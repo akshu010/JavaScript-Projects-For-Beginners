@@ -1,0 +1,149 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Menu Design</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      .main {
+        height: 100vh;
+        width: 100%;
+        background-color: rgb(70, 5, 5);
+        display: flex;
+        align-items: center;
+        /* justify-content: center; */
+        flex-direction: column;
+      }
+      #selection {
+        height: 40px;
+        width: 20vw;
+        cursor: pointer;
+        background-color: rgb(255, 255, 255);
+        padding-top: 10px;
+        padding-left: 20px;
+        margin-top: 15%;
+      }
+      .container {
+        height: 42vh;
+        width: 20vw;
+        background-color: white;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow-y: auto;
+      }
+      .item {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+      }
+      .item:hover {
+        background-color: gray;
+      }
+      .item img {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        margin-right: 20px;
+        cursor: pointer;
+      }
+      .item p {
+        font-size: 18px;
+        margin-left: 0px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div id="selection">
+        <p id="selectText">Select social media</p>
+      </div>
+      <div class="container">
+        <div class="item">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/480px-Facebook_logo_%28square%29.png"
+            alt="Facebook"
+          />
+          <p>Facebook</p>
+        </div>
+        <div class="item">
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/021/495/946/original/whatsapp-logo-icon-free-png.png"
+            alt="Whatsapp"
+          />
+          <p>Whatsapp</p>
+        </div>
+        <div class="item">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHP2W0X8Bj9Wwou8Y5Iv2q_Aa-nME9SMwEAA&s"
+            alt="Instagram"
+          />
+          <p>Instagram</p>
+        </div>
+        <div class="item">
+          <img
+            src="https://img.freepik.com/premium-photo/twitter-logo-icon-illustration-vector_895118-5895.jpg"
+            alt="Twitter"
+          />
+          <p>Twitter</p>
+        </div>
+        <div class="item">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png"
+            alt="YouTube"
+          />
+          <p>YouTube</p>
+        </div>
+        <div class="item">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsKGRiStylClgqDDvnhHOXA1LIqNhCstZewA&s"
+            alt="Reddit"
+          />
+          <p>Reddit</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      const selection = document.getElementById("selection");
+      const selectText = document.getElementById("selectText");
+      const item = document.getElementsByClassName("item");
+      const main = document.querySelector(".main");
+      const container = document.querySelector(".container");
+      const body = document.querySelector("body");
+      let taps = 0;
+
+      for (option of item) {
+        option.onclick = function () {
+          selectText.innerHTML = this.textContent;
+        };
+      }
+
+      selection.addEventListener("click", function () {
+  // Remove the container from the main element
+  if (taps == 0) { // Check if container exists
+    main.removeChild(container);
+    taps = 1;
+  }
+  else{
+    main.appendChild(container);
+    taps =0 
+  }
+});
+    </script>
+  </body>
+</html>
