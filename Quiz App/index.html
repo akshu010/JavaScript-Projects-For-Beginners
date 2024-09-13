@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+        body {
+            background-color: rgb(93, 40, 239);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #app-box {
+            width: 90%;
+            max-width: 500px;
+            background-color: white;
+            border-radius: 10px;
+            height: auto;
+            padding: 20px;
+        }
+        #app-box h1 {
+            font-size: 30px;
+        }
+        hr {
+            color: white;
+            width: 460px;
+            height: 2px;
+            text-align: center;
+            margin-top: 15px;
+        }
+        #question-box {
+            font-size: 25px;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        #answer-box {
+            display: flex;
+            flex-direction: column;
+        }
+        .btn {
+            text-align: left;
+            padding: 10px;
+            margin-top: 15px;
+            cursor: pointer;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        .btn:hover {
+            background-color: rgba(117, 117, 117, 0.726);
+            color: white;
+        }
+        .correct {
+            background-color: green;
+            color: white;
+        }
+        .wrong {
+            background-color: red;
+            color: white;
+        }
+        #next-box {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #next-box button {
+            height: 40px;
+            width: 100px;
+            cursor: pointer;
+            background-color: navy;
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="app-box">
+        <h1>Simple Quiz</h1>
+        <hr>
+        <div id="question-box">
+            Question Goes Here
+        </div>
+        <div id="answer-box">
+            <!-- Answer buttons will be dynamically generated here -->
+        </div>
+        <div id="next-box">
+            <button>Next</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

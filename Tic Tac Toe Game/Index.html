@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe Game</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+        font-family: "Lato", sans-serif;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(145deg, #83a4d4, #b6fbff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+      }
+      .main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+      }
+      .game {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 330px;
+        margin-top: 20px;
+        gap: 5px;
+      }
+      h1 {
+        font-weight: 700;
+        color: #333;
+        letter-spacing: 2px;
+        font-size: 36px;
+      }
+      .box {
+        height: 100px;
+        width: 100px;
+        border-radius: 15px;
+        border: 2px solid #d1d9e6;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        margin: 3px;
+        font-size: 60px;
+        font-weight: bold;
+        color: #5edcff;
+        background-color: #f1f5fa;
+        transition: background-color 0.3s, box-shadow 0.3s;
+      }
+      .box:hover {
+        background-color: #eceff5;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+      }
+      #reset {
+        height: 45px;
+        width: 120px;
+        margin-top: 25px;
+        border-radius: 25px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+      #reset:hover {
+        background-color: #444;
+      }
+      .game-winner p {
+        font-size: 28px;
+        color: #4caf50;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      #newgame {
+        height: 45px;
+        width: 120px;
+        border-radius: 25px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 16px;
+        margin-left: 0;
+        transition: background-color 0.3s;
+      }
+      #newgame:hover {
+        background-color: #43a047;
+      }
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main">
+        <div class="game-winner hide">
+          <p id="msg">Winner!</p>
+          <button id="newgame">New Game</button>
+        </div>
+        <h1>Tic Tac Toe</h1>
+        <div class="game">
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+        </div>
+        <button id="reset">Reset</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
