@@ -1,4 +1,4 @@
-console.log("Let's Start JavaScript");
+alert("Please Use mobile screen for better experience");
 let curr = 0;
 let isAnimating = false;
 let deny = select(".reject");
