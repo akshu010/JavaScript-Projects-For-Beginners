@@ -1,4 +1,4 @@
-// Let's Write javascript
+// Add google gemeni api after that the project will work
 
 let prompt = document.querySelector(".input");
 let btn = document.querySelector(".btn");
