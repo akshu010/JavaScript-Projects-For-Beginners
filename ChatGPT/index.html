@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatGPT</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body
+    class="overflow-scroll bg-[#2F2F2F] text-white h-screen w-full flex flex-col justify-between"
+  >
+    <div class="upper hidden">
+      <h1
+        class="text-9xl pt-6 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-gray-500 to-blue-500"
+      >
+        Hello There!
+      </h1>
+      <h2
+        class="text-center text-5xl pt-6 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-100 via-green-200 to-green-500"
+      >
+        Talk to your own Assistant
+      </h2>
+    </div>
+
+
+    <div class="middle px-5 flex-grow">
+      
+    </div>
+
+  
+    <div class="prompt flex items-center justify-center relative">
+      <input
+        class="input text-xl h-12 w-[50rem] border-0 outline-0 fixed bottom-5 rounded-lg p-2 px-4 bg-gray-300 text-black"
+        type="text"
+        placeholder="Ask something..."
+      />
+      <i
+        class="btn overflow-hidden fixed right-[22%] bottom-6 text-4xl cursor-pointer text-black ri-send-plane-2-line"
+      ></i>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
